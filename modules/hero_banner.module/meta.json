@@ -1,0 +1,15 @@
+{
+  "label": "Hero Banner",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Full-width hero section with eyebrow tag, two-line headline (with orange accent), body text, two CTA buttons, stats row, and a right-side image.",
+  "host_template_types": ["PAGE"],
+  "icon": "",
+  "is_available_for_new_content": true,
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": ["hero", "banner", "header"],
+  "no_wrapper": false
+}

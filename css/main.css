@@ -1,0 +1,248 @@
+/* =============================================================================
+   Mantis Portfolio — Global Styles
+   ============================================================================= */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--mp-font-family);
+  font-size: var(--mp-font-size-base);
+  font-weight: var(--mp-font-weight-regular);
+  line-height: var(--mp-line-height-base);
+  color: var(--mp-color-text-body);
+  background-color: var(--mp-color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--mp-color-primary);
+  text-decoration: none;
+  transition: color var(--mp-transition-fast);
+}
+
+a:hover {
+  color: var(--mp-color-primary-dark);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+input, textarea, select, button {
+  font-family: inherit;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--mp-font-family);
+  font-weight: var(--mp-font-weight-bold);
+  line-height: var(--mp-line-height-tight);
+  color: var(--mp-color-text-dark);
+}
+
+h1 { font-size: var(--mp-font-size-4xl); }
+h2 { font-size: var(--mp-font-size-3xl); }
+h3 { font-size: var(--mp-font-size-xl); }
+h4 { font-size: var(--mp-font-size-lg); }
+h5 { font-size: var(--mp-font-size-md); }
+h6 { font-size: var(--mp-font-size-base); }
+
+p {
+  line-height: var(--mp-line-height-loose);
+  color: var(--mp-color-text-body);
+}
+
+/* ---------- Layout Utilities ---------- */
+.mp-container {
+  width: 100%;
+  max-width: var(--mp-container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--mp-container-padding);
+  padding-right: var(--mp-container-padding);
+}
+
+.mp-section {
+  padding-top: var(--mp-section-padding-y);
+  padding-bottom: var(--mp-section-padding-y);
+}
+
+/* ---------- Button System ---------- */
+.mp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mp-space-2);
+  padding: 0.75rem 1.75rem;
+  font-family: var(--mp-font-family);
+  font-size: var(--mp-font-size-sm);
+  font-weight: var(--mp-font-weight-semibold);
+  line-height: 1;
+  border-radius: var(--mp-radius-pill);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color var(--mp-transition-base),
+    border-color var(--mp-transition-base),
+    color var(--mp-transition-base),
+    box-shadow var(--mp-transition-base),
+    transform var(--mp-transition-fast);
+  white-space: nowrap;
+}
+
+.mp-btn:hover {
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.mp-btn:active {
+  transform: translateY(0);
+}
+
+/* Primary — filled orange */
+.mp-btn--primary {
+  background-color: var(--mp-color-primary);
+  border-color: var(--mp-color-primary);
+  color: var(--mp-color-white);
+}
+
+.mp-btn--primary:hover {
+  background-color: var(--mp-color-primary-dark);
+  border-color: var(--mp-color-primary-dark);
+  color: var(--mp-color-white);
+  box-shadow: 0 8px 24px rgba(232, 103, 42, 0.35);
+}
+
+/* Outline — transparent, dark border (for light backgrounds) */
+.mp-btn--outline {
+  background-color: transparent;
+  border-color: var(--mp-color-text-dark);
+  color: var(--mp-color-text-dark);
+}
+
+.mp-btn--outline:hover {
+  background-color: var(--mp-color-text-dark);
+  color: var(--mp-color-white);
+}
+
+/* Outline Light — transparent, white border (for dark backgrounds) */
+.mp-btn--outline-light {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--mp-color-white);
+}
+
+.mp-btn--outline-light:hover {
+  background-color: var(--mp-color-white);
+  border-color: var(--mp-color-white);
+  color: var(--mp-color-text-dark);
+}
+
+/* Small variant */
+.mp-btn--sm {
+  padding: 0.5rem 1.25rem;
+  font-size: var(--mp-font-size-xs);
+}
+
+/* ---------- Section Heading Utility ---------- */
+.mp-section-eyebrow {
+  display: inline-block;
+  font-size: var(--mp-font-size-sm);
+  font-weight: var(--mp-font-weight-semibold);
+  color: var(--mp-color-primary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--mp-space-3);
+}
+
+.mp-section-heading {
+  font-size: var(--mp-font-size-3xl);
+  font-weight: var(--mp-font-weight-bold);
+  line-height: var(--mp-line-height-snug);
+  margin-bottom: var(--mp-space-4);
+}
+
+.mp-section-heading--light {
+  color: var(--mp-color-white);
+}
+
+.mp-section-subtitle {
+  font-size: var(--mp-font-size-md);
+  color: var(--mp-color-text-muted);
+  line-height: var(--mp-line-height-loose);
+  max-width: 640px;
+}
+
+.mp-section-subtitle--light {
+  color: var(--mp-color-text-light-muted);
+}
+
+/* ---------- Text Accent ---------- */
+.mp-text-accent {
+  color: var(--mp-color-primary);
+}
+
+/* ---------- Divider ---------- */
+.mp-divider {
+  border: none;
+  border-top: 1px solid var(--mp-color-border);
+  margin: var(--mp-space-8) 0;
+}
+
+/* ---------- HubSpot DnD Overrides ---------- */
+.dnd-section,
+.dnd-column,
+.widget-type-custom_widget {
+  /* Let our modules control their own spacing */
+}
+
+/* Remove default widget padding HubSpot sometimes adds */
+.widget-type-custom_widget > div {
+  margin: 0;
+}
+
+/* ---------- Responsive Breakpoints ---------- */
+@media (max-width: 1024px) {
+  :root {
+    --mp-font-size-4xl: 3rem;
+    --mp-font-size-5xl: 3.5rem;
+    --mp-section-padding-y: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --mp-font-size-4xl: 2.25rem;
+    --mp-font-size-3xl: 1.875rem;
+    --mp-font-size-2xl: 1.5rem;
+    --mp-section-padding-y: 3rem;
+    --mp-container-padding: 1.25rem;
+  }
+
+  h1 { font-size: var(--mp-font-size-3xl); }
+  h2 { font-size: var(--mp-font-size-2xl); }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --mp-container-padding: 1rem;
+  }
+}

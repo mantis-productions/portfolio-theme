@@ -1,0 +1,15 @@
+{
+  "label": "Featured Work",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Dark background project grid. Each card has an image, project title, description, tags, and links to /featured-work/[slug]. Supports up to 6 cards in a 2-column layout.",
+  "host_template_types": ["PAGE"],
+  "icon": "",
+  "is_available_for_new_content": true,
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": ["portfolio", "work", "projects", "grid"],
+  "no_wrapper": false
+}

@@ -1,0 +1,180 @@
+/* =============================================================================
+   About Section Module Styles
+   ============================================================================= */
+
+.mp-about {
+  background-color: var(--mp-color-light-bg);
+  padding-top: var(--mp-space-24);
+  padding-bottom: var(--mp-space-24);
+}
+
+/* ---------- Intro ---------- */
+.mp-about__intro {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--mp-space-16);
+}
+
+.mp-about__heading {
+  font-size: var(--mp-font-size-3xl);
+  font-weight: var(--mp-font-weight-bold);
+  color: var(--mp-color-text-dark);
+  margin-bottom: var(--mp-space-5);
+  letter-spacing: -0.02em;
+}
+
+.mp-about__body p {
+  font-size: var(--mp-font-size-md);
+  color: var(--mp-color-text-muted);
+  line-height: var(--mp-line-height-loose);
+  margin: 0;
+}
+
+/* ---------- Expertise Cards ---------- */
+.mp-about__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--mp-space-6);
+  margin-bottom: var(--mp-space-16);
+}
+
+.mp-about__card {
+  background-color: var(--mp-color-white);
+  border: 1px solid var(--mp-color-border);
+  border-radius: var(--mp-radius-lg);
+  padding: var(--mp-space-8) var(--mp-space-6);
+  transition:
+    box-shadow var(--mp-transition-base),
+    transform var(--mp-transition-base),
+    border-color var(--mp-transition-base);
+}
+
+.mp-about__card:hover {
+  box-shadow: var(--mp-shadow-lg);
+  transform: translateY(-4px);
+  border-color: var(--mp-color-primary);
+}
+
+.mp-about__card-icon {
+  font-size: 2rem;
+  margin-bottom: var(--mp-space-4);
+  line-height: 1;
+}
+
+.mp-about__card-title {
+  font-size: var(--mp-font-size-base);
+  font-weight: var(--mp-font-weight-bold);
+  color: var(--mp-color-text-dark);
+  margin-bottom: var(--mp-space-3);
+  line-height: var(--mp-line-height-snug);
+}
+
+.mp-about__card-body p {
+  font-size: var(--mp-font-size-sm);
+  color: var(--mp-color-text-muted);
+  line-height: var(--mp-line-height-loose);
+  margin: 0;
+}
+
+/* ---------- Skills Columns ---------- */
+.mp-about__skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--mp-space-8);
+  background-color: var(--mp-color-white);
+  border: 1px solid var(--mp-color-border);
+  border-radius: var(--mp-radius-xl);
+  padding: var(--mp-space-10);
+}
+
+.mp-about__skills-col {
+  padding: var(--mp-space-2);
+}
+
+.mp-about__skills-col + .mp-about__skills-col {
+  border-left: 1px solid var(--mp-color-border);
+  padding-left: var(--mp-space-8);
+}
+
+.mp-about__skills-heading {
+  font-size: var(--mp-font-size-md);
+  font-weight: var(--mp-font-weight-bold);
+  color: var(--mp-color-text-dark);
+  margin-bottom: var(--mp-space-5);
+  padding-bottom: var(--mp-space-3);
+  border-bottom: 2px solid var(--mp-color-primary);
+  display: inline-block;
+}
+
+.mp-about__skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mp-space-3);
+}
+
+.mp-about__skills-item {
+  display: flex;
+  align-items: center;
+  gap: var(--mp-space-3);
+  font-size: var(--mp-font-size-sm);
+  color: var(--mp-color-text-body);
+  font-weight: var(--mp-font-weight-medium);
+}
+
+.mp-about__skills-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--mp-color-primary);
+  flex-shrink: 0;
+}
+
+/* Certification badge variant */
+.mp-about__cert-badge {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.mp-about__skills-item--cert {
+  gap: var(--mp-space-2);
+}
+
+/* ---------- Scroll Animations ---------- */
+.mp-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.mp-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .mp-about__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mp-about__skills {
+    grid-template-columns: 1fr;
+    padding: var(--mp-space-8) var(--mp-space-6);
+  }
+
+  .mp-about__skills-col + .mp-about__skills-col {
+    border-left: none;
+    border-top: 1px solid var(--mp-color-border);
+    padding-left: var(--mp-space-2);
+    padding-top: var(--mp-space-6);
+  }
+}
+
+@media (max-width: 600px) {
+  .mp-about__cards {
+    grid-template-columns: 1fr;
+  }
+}

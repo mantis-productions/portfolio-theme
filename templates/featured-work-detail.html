@@ -1,0 +1,100 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Featured Work Detail
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+{# ============================================================
+   Mantis Portfolio — Featured Work Detail Template
+   URL pattern: /featured-work/[slug]
+   Drag-and-drop canvas for individual project pages.
+   ============================================================ #}
+
+{% block body %}
+
+{# Page hero — inherits page name from HubSpot CMS #}
+<div class="mp-detail-hero">
+  <div class="mp-container">
+    <nav class="mp-detail-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="/featured-work">Work</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{{ content.name }}</span>
+    </nav>
+    <h1 class="mp-detail-hero__title">{{ content.name }}</h1>
+  </div>
+</div>
+
+{% dnd_area "project_content" label="Project Content" %}
+
+  {% dnd_section %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module path="@hubspot/rich_text" label="Project Overview" %}
+          {% module_attribute "html" %}
+            <h2>Project Overview</h2>
+            <p>Add your project details here using the editor. You can add images, videos, code blocks, and more.</p>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+{% end_dnd_area %}
+
+{# Back navigation #}
+<div class="mp-detail-back">
+  <div class="mp-container">
+    <a href="/featured-work" class="mp-btn mp-btn--outline mp-btn--sm">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      Back to All Work
+    </a>
+  </div>
+</div>
+
+<style>
+.mp-detail-hero {
+  background-color: var(--mp-color-light-bg);
+  padding: var(--mp-space-16) 0 var(--mp-space-10);
+  border-bottom: 1px solid var(--mp-color-border);
+}
+
+.mp-detail-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--mp-space-2);
+  margin-bottom: var(--mp-space-4);
+  font-size: var(--mp-font-size-sm);
+  color: var(--mp-color-text-muted);
+}
+
+.mp-detail-breadcrumb a {
+  color: var(--mp-color-text-muted);
+  text-decoration: none;
+  transition: color var(--mp-transition-fast);
+}
+
+.mp-detail-breadcrumb a:hover {
+  color: var(--mp-color-primary);
+}
+
+.mp-detail-hero__title {
+  font-size: var(--mp-font-size-3xl);
+  font-weight: var(--mp-font-weight-bold);
+  color: var(--mp-color-text-dark);
+  letter-spacing: -0.02em;
+}
+
+.mp-detail-back {
+  padding: var(--mp-space-10) 0 var(--mp-space-16);
+  background-color: var(--mp-color-light-bg);
+  border-top: 1px solid var(--mp-color-border);
+}
+</style>
+
+{% endblock body %}

@@ -1,0 +1,187 @@
+[
+  {
+    "id": "about_heading",
+    "name": "heading",
+    "label": "Section Heading",
+    "type": "text",
+    "default": "About Me"
+  },
+  {
+    "id": "about_intro_text",
+    "name": "intro_text",
+    "label": "Intro Paragraph",
+    "type": "richtext",
+    "default": "<p>With 7 years of HubSpot development experience, I specialize in creating powerful, scalable solutions that help businesses grow. From custom CMS themes to complex integrations, I bring technical expertise and creative problem-solving to every project.</p>"
+  },
+  {
+    "id": "expertise_cards_heading",
+    "name": "cards_heading",
+    "label": "Expertise Cards Heading",
+    "type": "text",
+    "default": "What I Do"
+  },
+  {
+    "id": "expertise_cards",
+    "name": "expertise_cards",
+    "label": "Expertise Cards",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "sorting_label_field": "expertise_cards.title",
+      "default": 4
+    },
+    "children": [
+      {
+        "id": "card_icon",
+        "name": "icon",
+        "label": "Icon (SVG or emoji)",
+        "type": "text",
+        "default": "🎨"
+      },
+      {
+        "id": "card_title",
+        "name": "title",
+        "label": "Card Title",
+        "type": "text",
+        "default": "HubSpot CMS Development"
+      },
+      {
+        "id": "card_body",
+        "name": "card_body",
+        "label": "Card Description",
+        "type": "richtext",
+        "default": "<p>Expert in building custom HubSpot themes, modules, and templates with HubL and modern web technologies.</p>"
+      }
+    ],
+    "default": [
+      {
+        "icon": "🏗️",
+        "title": "HubSpot CMS Development",
+        "body": "<p>Expert in building custom HubSpot themes, modules, and templates with HubL and modern web technologies.</p>"
+      },
+      {
+        "icon": "🔗",
+        "title": "API Integration",
+        "body": "<p>Seamless integration of HubSpot with third-party services, custom APIs, and automation workflows.</p>"
+      },
+      {
+        "icon": "⚡",
+        "title": "Marketing Automation",
+        "body": "<p>Creating scalable marketing automation solutions that drive engagement and conversions.</p>"
+      },
+      {
+        "icon": "🚀",
+        "title": "Performance Optimization",
+        "body": "<p>Optimizing HubSpot sites for speed, SEO, and user experience with best practices and modern techniques.</p>"
+      }
+    ]
+  },
+  {
+    "id": "technical_skills_heading",
+    "name": "technical_skills_heading",
+    "label": "Technical Skills Column Heading",
+    "type": "text",
+    "default": "Technical Skills"
+  },
+  {
+    "id": "technical_skills",
+    "name": "technical_skills",
+    "label": "Technical Skills",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 20,
+      "sorting_label_field": "technical_skills.skill",
+      "default": 8
+    },
+    "children": [
+      {
+        "id": "skill_name",
+        "name": "skill",
+        "label": "Skill Name",
+        "type": "text",
+        "default": "HubL"
+      }
+    ],
+    "default": [
+      { "skill": "HubL" },
+      { "skill": "JavaScript" },
+      { "skill": "React" },
+      { "skill": "CSS / SASS" },
+      { "skill": "HubSpot API" },
+      { "skill": "Node.js" },
+      { "skill": "REST APIs" },
+      { "skill": "GraphQL" }
+    ]
+  },
+  {
+    "id": "hubspot_expertise_heading",
+    "name": "hubspot_expertise_heading",
+    "label": "HubSpot Expertise Column Heading",
+    "type": "text",
+    "default": "HubSpot Expertise"
+  },
+  {
+    "id": "hubspot_expertise",
+    "name": "hubspot_expertise",
+    "label": "HubSpot Expertise Items",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 20,
+      "sorting_label_field": "hubspot_expertise.item",
+      "default": 6
+    },
+    "children": [
+      {
+        "id": "expertise_item",
+        "name": "item",
+        "label": "Expertise Item",
+        "type": "text",
+        "default": "CMS Hub"
+      }
+    ],
+    "default": [
+      { "item": "CMS Hub" },
+      { "item": "Marketing Hub" },
+      { "item": "CRM" },
+      { "item": "Workflows" },
+      { "item": "Custom Modules" },
+      { "item": "Theme Development" }
+    ]
+  },
+  {
+    "id": "certifications_heading",
+    "name": "certifications_heading",
+    "label": "Certifications Column Heading",
+    "type": "text",
+    "default": "Certifications"
+  },
+  {
+    "id": "certifications",
+    "name": "certifications",
+    "label": "Certifications",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 10,
+      "sorting_label_field": "certifications.name",
+      "default": 3
+    },
+    "children": [
+      {
+        "id": "cert_name",
+        "name": "cert_name",
+        "label": "Certification Name",
+        "type": "text",
+        "default": "HubSpot CMS Developer"
+      }
+    ],
+    "default": [
+      { "name": "HubSpot CMS Developer" },
+      { "name": "HubSpot Solutions Partner" },
+      { "name": "Inbound Marketing Certified" }
+    ]
+  }
+]

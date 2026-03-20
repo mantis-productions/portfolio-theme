@@ -1,0 +1,311 @@
+/* =============================================================================
+   Contact Section Module Styles
+   ============================================================================= */
+
+.mp-contact {
+  background-color: var(--mp-color-dark-bg);
+  padding-top: var(--mp-space-24);
+  padding-bottom: var(--mp-space-24);
+}
+
+/* ---------- Inner: 45/55 Split ---------- */
+.mp-contact__inner {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  align-items: start;
+  gap: var(--mp-space-16);
+}
+
+/* ---------- Left Column ---------- */
+.mp-contact__heading {
+  font-size: var(--mp-font-size-3xl);
+  font-weight: var(--mp-font-weight-bold);
+  color: var(--mp-color-white);
+  margin-bottom: var(--mp-space-5);
+  line-height: var(--mp-line-height-snug);
+  letter-spacing: -0.02em;
+}
+
+.mp-contact__intro {
+  margin-bottom: var(--mp-space-8);
+}
+
+.mp-contact__intro p {
+  font-size: var(--mp-font-size-base);
+  color: var(--mp-color-text-light-muted);
+  line-height: var(--mp-line-height-loose);
+  margin: 0;
+}
+
+/* Contact detail list */
+.mp-contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mp-space-4);
+  margin-bottom: var(--mp-space-6);
+}
+
+.mp-contact__detail {
+  display: flex;
+  align-items: center;
+  gap: var(--mp-space-3);
+}
+
+.mp-contact__detail-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--mp-radius-md);
+  background-color: rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mp-color-primary);
+}
+
+.mp-contact__detail-link,
+.mp-contact__detail-text {
+  font-size: var(--mp-font-size-sm);
+  color: var(--mp-color-text-light-muted);
+}
+
+.mp-contact__detail-link {
+  text-decoration: none;
+  transition: color var(--mp-transition-fast);
+}
+
+.mp-contact__detail-link:hover {
+  color: var(--mp-color-primary);
+}
+
+/* Social icons */
+.mp-contact__social {
+  display: flex;
+  gap: var(--mp-space-3);
+  margin-bottom: var(--mp-space-10);
+  padding-bottom: var(--mp-space-8);
+  border-bottom: 1px solid var(--mp-color-border-dark);
+}
+
+.mp-contact__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--mp-radius-md);
+  background-color: rgba(255, 255, 255, 0.07);
+  color: var(--mp-color-text-light-muted);
+  text-decoration: none;
+  transition:
+    background-color var(--mp-transition-base),
+    color var(--mp-transition-base);
+}
+
+.mp-contact__social-link:hover {
+  background-color: var(--mp-color-primary);
+  color: var(--mp-color-white);
+}
+
+/* Help list */
+.mp-contact__help-heading {
+  font-size: var(--mp-font-size-sm);
+  font-weight: var(--mp-font-weight-semibold);
+  color: var(--mp-color-white);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: var(--mp-space-4);
+}
+
+.mp-contact__help-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mp-space-3);
+}
+
+.mp-contact__help-item {
+  display: flex;
+  align-items: center;
+  gap: var(--mp-space-3);
+  font-size: var(--mp-font-size-sm);
+  color: var(--mp-color-text-light-muted);
+}
+
+.mp-contact__help-dot {
+  color: var(--mp-color-primary);
+  font-weight: var(--mp-font-weight-bold);
+  flex-shrink: 0;
+  width: 18px;
+}
+
+/* ---------- Right Column: Form Card ---------- */
+.mp-contact__form-card {
+  background-color: var(--mp-color-white);
+  border-radius: var(--mp-radius-xl);
+  padding: var(--mp-space-10);
+  box-shadow: var(--mp-shadow-xl);
+}
+
+.mp-contact__form-heading {
+  font-size: var(--mp-font-size-xl);
+  font-weight: var(--mp-font-weight-bold);
+  color: var(--mp-color-text-dark);
+  margin-bottom: var(--mp-space-8);
+  letter-spacing: -0.01em;
+}
+
+/* Placeholder message when form IDs are not set */
+.mp-contact__form-placeholder {
+  font-size: var(--mp-font-size-sm);
+  color: var(--mp-color-text-muted);
+  background-color: var(--mp-color-light-bg);
+  border: 1px dashed var(--mp-color-border);
+  border-radius: var(--mp-radius-md);
+  padding: var(--mp-space-6);
+  line-height: var(--mp-line-height-loose);
+  text-align: center;
+}
+
+/* ---------- HubSpot Form Overrides ---------- */
+/* These override HubSpot's default form styles to match our design */
+
+.mp-contact__hs-form .hs-form,
+.mp-contact__hs-form form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mp-space-5);
+}
+
+.mp-contact__hs-form .hs-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mp-space-2);
+}
+
+.mp-contact__hs-form label {
+  font-size: var(--mp-font-size-sm);
+  font-weight: var(--mp-font-weight-semibold);
+  color: var(--mp-color-text-dark);
+}
+
+.mp-contact__hs-form .hs-input,
+.mp-contact__hs-form input[type="text"],
+.mp-contact__hs-form input[type="email"],
+.mp-contact__hs-form input[type="tel"],
+.mp-contact__hs-form textarea,
+.mp-contact__hs-form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--mp-font-family);
+  font-size: var(--mp-font-size-sm);
+  color: var(--mp-color-text-dark);
+  background-color: var(--mp-color-light-bg);
+  border: 1.5px solid var(--mp-color-border);
+  border-radius: var(--mp-radius-md);
+  outline: none;
+  transition:
+    border-color var(--mp-transition-fast),
+    box-shadow var(--mp-transition-fast),
+    background-color var(--mp-transition-fast);
+  -webkit-appearance: none;
+}
+
+.mp-contact__hs-form .hs-input:focus,
+.mp-contact__hs-form input:focus,
+.mp-contact__hs-form textarea:focus {
+  border-color: var(--mp-color-primary);
+  background-color: var(--mp-color-white);
+  box-shadow: 0 0 0 3px rgba(232, 103, 42, 0.12);
+}
+
+.mp-contact__hs-form textarea,
+.mp-contact__hs-form .hs-fieldtype-textarea textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Submit button */
+.mp-contact__hs-form .hs-button,
+.mp-contact__hs-form input[type="submit"] {
+  width: 100%;
+  padding: 0.875rem 2rem;
+  font-family: var(--mp-font-family);
+  font-size: var(--mp-font-size-base);
+  font-weight: var(--mp-font-weight-semibold);
+  color: var(--mp-color-white);
+  background-color: var(--mp-color-primary);
+  border: none;
+  border-radius: var(--mp-radius-pill);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition:
+    background-color var(--mp-transition-base),
+    box-shadow var(--mp-transition-base),
+    transform var(--mp-transition-fast);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.mp-contact__hs-form .hs-button:hover,
+.mp-contact__hs-form input[type="submit"]:hover {
+  background-color: var(--mp-color-primary-dark);
+  box-shadow: 0 8px 24px rgba(232, 103, 42, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Error states */
+.mp-contact__hs-form .hs-error-msgs {
+  list-style: none;
+  margin-top: var(--mp-space-1);
+}
+
+.mp-contact__hs-form .hs-error-msgs li label {
+  font-size: var(--mp-font-size-xs);
+  font-weight: var(--mp-font-weight-regular);
+  color: #DC2626;
+}
+
+.mp-contact__hs-form .hs-input.error,
+.mp-contact__hs-form input.error,
+.mp-contact__hs-form textarea.error {
+  border-color: #DC2626;
+}
+
+/* Success message */
+.mp-contact__hs-form .submitted-message {
+  text-align: center;
+  padding: var(--mp-space-8);
+  font-size: var(--mp-font-size-base);
+  font-weight: var(--mp-font-weight-medium);
+  color: var(--mp-color-text-dark);
+}
+
+/* ---------- Scroll Animations ---------- */
+.mp-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.mp-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mp-contact__right.mp-animate {
+  transition-delay: 0.15s;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .mp-contact__inner {
+    grid-template-columns: 1fr;
+    gap: var(--mp-space-10);
+  }
+}
+
+@media (max-width: 480px) {
+  .mp-contact__form-card {
+    padding: var(--mp-space-8) var(--mp-space-6);
+  }
+}

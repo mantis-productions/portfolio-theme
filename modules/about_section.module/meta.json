@@ -1,0 +1,15 @@
+{
+  "label": "About Section",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Full About Me section including: centered intro heading and body, a row of 4 expertise cards, and a 3-column skills/expertise/certifications grid.",
+  "host_template_types": ["PAGE"],
+  "icon": "",
+  "is_available_for_new_content": true,
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": ["about", "skills", "bio"],
+  "no_wrapper": false
+}

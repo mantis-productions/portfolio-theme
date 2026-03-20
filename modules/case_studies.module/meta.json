@@ -1,0 +1,15 @@
+{
+  "label": "Case Studies",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Light background case study listing. Each entry shows a category badge, company name, outcome headline, challenge/solution copy, metric stats, and a link to /case-studies/[slug]. Right column holds a project image.",
+  "host_template_types": ["PAGE"],
+  "icon": "",
+  "is_available_for_new_content": true,
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": ["case studies", "results", "portfolio"],
+  "no_wrapper": false
+}

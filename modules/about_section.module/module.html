@@ -1,0 +1,96 @@
+{#
+  About Section Module
+  - Section anchor: #about
+  - Part 1: Centered heading + intro paragraph
+  - Part 2: 4-column expertise cards
+  - Part 3: 3-column skills / expertise / certifications grid
+#}
+
+<section class="mp-about" id="about" aria-label="About Me">
+  <div class="mp-container">
+
+    {# ── Part 1: Intro ── #}
+    <div class="mp-about__intro mp-animate">
+      {% if module.heading %}
+        <h2 class="mp-about__heading">{{ module.heading }}</h2>
+      {% endif %}
+      {% if module.intro_text %}
+        <div class="mp-about__body">{{ module.intro_text }}</div>
+      {% endif %}
+    </div>
+
+    {# ── Part 2: Expertise Cards ── #}
+    {% if module.expertise_cards %}
+      <div class="mp-about__cards">
+        {% for card in module.expertise_cards %}
+          <div class="mp-about__card mp-animate" style="animation-delay: {{ loop.index0 * 0.1 }}s">
+            <div class="mp-about__card-icon" aria-hidden="true">{{ card.icon }}</div>
+            <h3 class="mp-about__card-title">{{ card.title }}</h3>
+            <div class="mp-about__card-body">{{ card.card_body }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {# ── Part 3: Skills Columns ── #}
+    <div class="mp-about__skills mp-animate">
+
+      {# Technical Skills #}
+      <div class="mp-about__skills-col">
+        {% if module.technical_skills_heading %}
+          <h3 class="mp-about__skills-heading">{{ module.technical_skills_heading }}</h3>
+        {% endif %}
+        {% if module.technical_skills %}
+          <ul class="mp-about__skills-list">
+            {% for skill in module.technical_skills %}
+              <li class="mp-about__skills-item">
+                <span class="mp-about__skills-dot" aria-hidden="true"></span>
+                {{ skill.skill }}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+
+      {# HubSpot Expertise #}
+      <div class="mp-about__skills-col">
+        {% if module.hubspot_expertise_heading %}
+          <h3 class="mp-about__skills-heading">{{ module.hubspot_expertise_heading }}</h3>
+        {% endif %}
+        {% if module.hubspot_expertise %}
+          <ul class="mp-about__skills-list">
+            {% for item in module.hubspot_expertise %}
+              <li class="mp-about__skills-item">
+                <span class="mp-about__skills-dot" aria-hidden="true"></span>
+                {{ item.item }}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+
+      {# Certifications #}
+      <div class="mp-about__skills-col">
+        {% if module.certifications_heading %}
+          <h3 class="mp-about__skills-heading">{{ module.certifications_heading }}</h3>
+        {% endif %}
+        {% if module.certifications %}
+          <ul class="mp-about__skills-list mp-about__skills-list--certs">
+            {% for cert in module.certifications %}
+              <li class="mp-about__skills-item mp-about__skills-item--cert">
+                <span class="mp-about__cert-badge" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--mp-color-primary)" aria-hidden="true">
+                    <path d="M9 11.25l2.25 2.25L15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </span>
+                {{ cert.cert_name }}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+
+    </div>
+
+  </div>
+</section>

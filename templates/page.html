@@ -1,0 +1,53 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Generic Page
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+{# ============================================================
+   Mantis Portfolio — Generic Page Template
+   Used for interior sub-pages (blog, case study detail, etc.)
+   Blank drag-and-drop canvas — add modules as needed.
+   ============================================================ #}
+
+{% block body %}
+
+<div class="mp-page-hero">
+  <div class="mp-container">
+    <h1 class="mp-page-hero__title">{{ content.name }}</h1>
+  </div>
+</div>
+
+{% dnd_area "page_content" label="Page Content" %}
+
+  {% dnd_section %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module path="@hubspot/rich_text" label="Rich Text" %}
+          {% module_attribute "html" %}
+            <p>Start building your page by adding modules from the left panel.</p>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+{% end_dnd_area %}
+
+<style>
+.mp-page-hero {
+  background-color: var(--mp-color-light-bg);
+  padding: var(--mp-space-16) 0 var(--mp-space-10);
+  border-bottom: 1px solid var(--mp-color-border);
+}
+
+.mp-page-hero__title {
+  font-size: var(--mp-font-size-3xl);
+  font-weight: var(--mp-font-weight-bold);
+  color: var(--mp-color-text-dark);
+}
+</style>
+
+{% endblock body %}

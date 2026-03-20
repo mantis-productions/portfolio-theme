@@ -1,0 +1,120 @@
+{#
+  Featured Work Module
+  - Section anchor: #work
+  - Dark navy background
+  - Eyebrow + heading + subheading (centered)
+  - 2-column responsive project card grid
+  - Each card links to /featured-work/[slug]
+  - Optional section-level CTA to /featured-work listing page
+#}
+
+<section class="mp-work" id="work" aria-label="Featured Work">
+  <div class="mp-container">
+
+    {# ── Section Header ── #}
+    <div class="mp-work__header mp-animate">
+      {% if module.eyebrow %}
+        <span class="mp-section-eyebrow">{{ module.eyebrow }}</span>
+      {% endif %}
+
+      {% if module.heading %}
+        <h2 class="mp-section-heading mp-section-heading--light">{{ module.heading }}</h2>
+      {% endif %}
+
+      {% if module.subheading %}
+        <div class="mp-work__subheading mp-section-subtitle mp-section-subtitle--light">
+          {{ module.subheading }}
+        </div>
+      {% endif %}
+
+      {% if module.cta_label %}
+        <a
+          href="{{ module.cta_url.url.href | default('/featured-work') }}"
+          class="mp-btn mp-btn--outline-light mp-btn--sm mp-work__header-cta"
+          {% if module.cta_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}
+        >
+          {{ module.cta_label }}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+
+    {# ── Project Grid ── #}
+    {% if module.projects %}
+      <div class="mp-work__grid" role="list">
+        {% for project in module.projects %}
+          <article
+            class="mp-work__card mp-animate"
+            role="listitem"
+            style="transition-delay: {{ loop.index0 * 0.1 }}s"
+          >
+            <a
+              href="/featured-work/{{ project.slug }}"
+              class="mp-work__card-link"
+              aria-label="View {{ project.title }} project"
+            >
+              {# Card Image #}
+              <div class="mp-work__card-image-wrap">
+                {% if project.image.src %}
+                  <img
+                    src="{{ project.image.src }}"
+                    alt="{{ project.image.alt | default(project.title) }}"
+                    class="mp-work__card-image"
+                    width="{{ project.image.width }}"
+                    height="{{ project.image.height }}"
+                    loading="lazy"
+                  >
+                {% else %}
+                  <div class="mp-work__card-image-placeholder" aria-hidden="true">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5">
+                      <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+                    </svg>
+                  </div>
+                {% endif %}
+
+                {# Hover overlay #}
+                <div class="mp-work__card-overlay" aria-hidden="true">
+                  <span class="mp-work__card-overlay-label">View Project →</span>
+                </div>
+
+                {# Category badge #}
+                {% if project.category %}
+                  <span class="mp-work__card-category">{{ project.category }}</span>
+                {% endif %}
+              </div>
+
+              {# Card Body #}
+              <div class="mp-work__card-body">
+                <h3 class="mp-work__card-title">{{ project.title }}</h3>
+
+                {% if project.description %}
+                  <p class="mp-work__card-desc">{{ project.description }}</p>
+                {% endif %}
+
+                {% if project.tags %}
+                  <div class="mp-work__card-tags" aria-label="Technologies used">
+                    {% set tags_list = project.tags.split(',') %}
+                    {% for tag in tags_list %}
+                      <span class="mp-work__card-tag">{{ tag | trim }}</span>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+                <span class="mp-work__card-cta" aria-hidden="true">
+                  View Case Study
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </div>
+
+            </a>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</section>

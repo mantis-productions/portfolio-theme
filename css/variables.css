@@ -1,0 +1,98 @@
+/* =============================================================================
+   Mantis Portfolio — CSS Design Tokens
+   All values are controlled here. Reference via var(--token-name) everywhere.
+   ============================================================================= */
+
+:root {
+
+  /* ---------- Colors ---------- */
+  --mp-color-primary:        #E8672A;
+  --mp-color-primary-dark:   #C4521A;
+  --mp-color-primary-light:  rgba(232, 103, 42, 0.12);
+
+  --mp-color-dark-bg:        #0D1117;
+  --mp-color-dark-bg-2:      #131929;
+  --mp-color-dark-surface:   #1A2235;
+
+  --mp-color-white:          #FFFFFF;
+  --mp-color-light-bg:       #F8F9FA;
+  --mp-color-light-bg-2:     #F1F3F5;
+
+  --mp-color-text-dark:      #1C1C2E;
+  --mp-color-text-body:      #374151;
+  --mp-color-text-muted:     #6B7280;
+  --mp-color-text-light:     #FFFFFF;
+  --mp-color-text-light-muted: rgba(255, 255, 255, 0.65);
+
+  --mp-color-border:         #E5E7EB;
+  --mp-color-border-dark:    rgba(255, 255, 255, 0.10);
+
+  /* ---------- Typography ---------- */
+  --mp-font-family:          'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --mp-font-size-xs:         0.75rem;    /* 12px */
+  --mp-font-size-sm:         0.875rem;   /* 14px */
+  --mp-font-size-base:       1rem;       /* 16px */
+  --mp-font-size-md:         1.125rem;   /* 18px */
+  --mp-font-size-lg:         1.25rem;    /* 20px */
+  --mp-font-size-xl:         1.5rem;     /* 24px */
+  --mp-font-size-2xl:        2rem;       /* 32px */
+  --mp-font-size-3xl:        2.5rem;     /* 40px */
+  --mp-font-size-4xl:        3.5rem;     /* 56px */
+  --mp-font-size-5xl:        4.5rem;     /* 72px */
+
+  --mp-font-weight-regular:  400;
+  --mp-font-weight-medium:   500;
+  --mp-font-weight-semibold: 600;
+  --mp-font-weight-bold:     700;
+  --mp-font-weight-extrabold:800;
+  --mp-font-weight-black:    900;
+
+  --mp-line-height-tight:    1.15;
+  --mp-line-height-snug:     1.3;
+  --mp-line-height-base:     1.6;
+  --mp-line-height-loose:    1.75;
+
+  /* ---------- Spacing ---------- */
+  --mp-space-1:   0.25rem;   /*  4px */
+  --mp-space-2:   0.5rem;    /*  8px */
+  --mp-space-3:   0.75rem;   /* 12px */
+  --mp-space-4:   1rem;      /* 16px */
+  --mp-space-5:   1.25rem;   /* 20px */
+  --mp-space-6:   1.5rem;    /* 24px */
+  --mp-space-8:   2rem;      /* 32px */
+  --mp-space-10:  2.5rem;    /* 40px */
+  --mp-space-12:  3rem;      /* 48px */
+  --mp-space-16:  4rem;      /* 64px */
+  --mp-space-20:  5rem;      /* 80px */
+  --mp-space-24:  6rem;      /* 96px */
+  --mp-space-32:  8rem;      /* 128px */
+
+  /* ---------- Layout ---------- */
+  --mp-container-max:     1200px;
+  --mp-container-padding: 2rem;
+  --mp-section-padding-y: 5rem;
+
+  /* ---------- Borders & Radius ---------- */
+  --mp-radius-sm:   4px;
+  --mp-radius-md:   8px;
+  --mp-radius-lg:   12px;
+  --mp-radius-xl:   20px;
+  --mp-radius-pill: 999px;
+
+  /* ---------- Shadows ---------- */
+  --mp-shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05);
+  --mp-shadow-md:   0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.05);
+  --mp-shadow-lg:   0 8px 40px rgba(0, 0, 0, 0.10), 0 4px 12px rgba(0, 0, 0, 0.06);
+  --mp-shadow-xl:   0 20px 60px rgba(0, 0, 0, 0.12);
+
+  /* ---------- Transitions ---------- */
+  --mp-transition-fast:   0.15s ease;
+  --mp-transition-base:   0.3s ease;
+  --mp-transition-slow:   0.5s ease;
+
+  /* ---------- Z-index ---------- */
+  --mp-z-nav:     1000;
+  --mp-z-overlay: 900;
+  --mp-z-modal:   1100;
+}

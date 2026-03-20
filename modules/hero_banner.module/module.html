@@ -1,0 +1,91 @@
+{#
+  Hero Banner Module
+  - Section anchor: #hero
+  - Split layout: left content | right image
+  - Eyebrow tag, two-line heading with orange accent
+  - Primary + secondary CTA buttons
+  - Stats row at the bottom
+#}
+
+<section class="mp-hero" id="hero" aria-label="Hero">
+  <div class="mp-container">
+    <div class="mp-hero__inner">
+
+      {# ── Left: Content ── #}
+      <div class="mp-hero__content mp-animate">
+
+        {% if module.eyebrow %}
+          <span class="mp-hero__eyebrow">{{ module.eyebrow }}</span>
+        {% endif %}
+
+        <h1 class="mp-hero__heading">
+          {{ module.heading_line1 }}<br>
+          <span class="mp-hero__heading-accent">{{ module.heading_accent }}</span>
+        </h1>
+
+        {% if module.body_text %}
+          <div class="mp-hero__body">{{ module.body_text }}</div>
+        {% endif %}
+
+        <div class="mp-hero__ctas">
+          {% if module.cta_primary.hero_cta_primary_label %}
+            <a
+              href="{{ module.cta_primary.url.url.href | default('#contact') }}"
+              class="mp-btn mp-btn--primary"
+              {% if module.cta_primary.url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}
+            >
+              {{ module.cta_primary.hero_cta_primary_label }}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          {% endif %}
+
+          {% if module.cta_secondary.hero_cta_secondary_label %}
+            <a
+              href="{{ module.cta_secondary.url.url.href | default('#work') }}"
+              class="mp-btn mp-btn--outline"
+              {% if module.cta_secondary.url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}
+            >
+              {{ module.cta_secondary.hero_cta_secondary_label }}
+            </a>
+          {% endif %}
+        </div>
+
+        {% if module.stats %}
+          <div class="mp-hero__stats" aria-label="Key statistics">
+            {% for stat in module.stats %}
+              <div class="mp-hero__stat">
+                <span class="mp-hero__stat-value">{{ stat.value }}</span>
+                <span class="mp-hero__stat-label">{{ stat.stat_label }}</span>
+              </div>
+              {% if not loop.last %}
+                <div class="mp-hero__stat-divider" aria-hidden="true"></div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+      </div>
+
+      {# ── Right: Image ── #}
+      <div class="mp-hero__image-wrap mp-animate">
+        {% if module.hero_image.src %}
+          <img
+            src="{{ module.hero_image.src }}"
+            alt="{{ module.hero_image.alt }}"
+            class="mp-hero__image"
+            width="{{ module.hero_image.width }}"
+            height="{{ module.hero_image.height }}"
+            loading="eager"
+          >
+        {% else %}
+          <div class="mp-hero__image-placeholder" aria-hidden="true">
+            <span>Hero Image</span>
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>

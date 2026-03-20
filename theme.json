@@ -1,0 +1,23 @@
+{
+  "label": "Mark Wroblewski",
+  "author": {
+    "name": "Portfolio Theme",
+    "email": "mark@mantis.build",
+    "url": "https://www.markwroblewski.net/"
+	},
+  "documentation_url": "https://github.com/mantis-productions/hubspot-portfolio/blob/master/README.md",
+  "example_url": "https://www.markwroblewski.net/",
+  "preview_path": "./templates/home.html",
+  "screenshot_path": "./images/template-previews/home.png",
+  "enable_domain_stylesheets": false,
+  "license": "./license.txt",
+  "responsive_breakpoints": [
+    {
+      "name": "mobile",
+      "mediaQuery": "@media (max-width: 767px)",
+      "previewWidth": {
+        "value": 477
+      }
+    }
+  ]
+}

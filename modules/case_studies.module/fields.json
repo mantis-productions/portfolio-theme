@@ -1,0 +1,182 @@
+[
+  {
+    "id": "cs_eyebrow",
+    "name": "eyebrow",
+    "label": "Eyebrow Label",
+    "type": "text",
+    "default": "Results"
+  },
+  {
+    "id": "cs_heading",
+    "name": "heading",
+    "label": "Section Heading",
+    "type": "text",
+    "default": "Case Studies"
+  },
+  {
+    "id": "cs_subheading",
+    "name": "subheading",
+    "label": "Section Subheading",
+    "type": "text",
+    "default": "Real results from real projects. See how I've helped businesses transform their digital presence with HubSpot."
+  },
+  {
+    "id": "cs_view_all_label",
+    "name": "view_all_label",
+    "label": "View All CTA Label",
+    "type": "text",
+    "default": "View All Case Studies"
+  },
+  {
+    "id": "cs_view_all_url",
+    "name": "view_all_url",
+    "label": "View All CTA URL",
+    "type": "link",
+    "default": {
+      "url": { "href": "/case-studies", "type": "EXTERNAL" },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "id": "cs_studies",
+    "name": "studies",
+    "label": "Case Studies",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "sorting_label_field": "studies.company_name",
+      "default": 2
+    },
+    "children": [
+      {
+        "id": "cs_category",
+        "name": "category",
+        "label": "Category / Industry",
+        "type": "text",
+        "default": "HubSpot Migration"
+      },
+      {
+        "id": "cs_company_name",
+        "name": "company_name",
+        "label": "Company Name",
+        "type": "text",
+        "default": "TechCorp Industries"
+      },
+      {
+        "id": "cs_outcome_headline",
+        "name": "outcome_headline",
+        "label": "Outcome Headline (orange accent text)",
+        "type": "text",
+        "default": "Increased Lead Generation by 340%"
+      },
+      {
+        "id": "cs_challenge",
+        "name": "challenge",
+        "label": "Challenge",
+        "type": "richtext",
+        "default": "<p>Outdated website and disconnected marketing tools were preventing the team from executing effective digital campaigns.</p>"
+      },
+      {
+        "id": "cs_solution",
+        "name": "solution",
+        "label": "Solution",
+        "type": "richtext",
+        "default": "<p>Complete HubSpot CMS migration with custom integrations and automation workflows designed to scale with the business.</p>"
+      },
+      {
+        "id": "cs_metrics",
+        "name": "metrics",
+        "label": "Result Metrics",
+        "type": "group",
+        "occurrence": {
+          "min": 1,
+          "max": 4,
+          "sorting_label_field": "metrics.value",
+          "default": 3
+        },
+        "children": [
+          {
+            "id": "metric_icon",
+            "name": "icon",
+            "label": "Icon (emoji or symbol)",
+            "type": "text",
+            "default": "📈"
+          },
+          {
+            "id": "metric_value",
+            "name": "value",
+            "label": "Metric Value",
+            "type": "text",
+            "default": "340%"
+          },
+          {
+            "id": "metric_label",
+            "name": "metric_label",
+            "label": "Metric Label",
+            "type": "text",
+            "default": "Increase in Leads"
+          }
+        ],
+        "default": [
+          { "icon": "📈", "value": "340%", "label": "Increase in Leads" },
+          { "icon": "💰", "value": "2.5x",  "label": "Revenue Growth" },
+          { "icon": "👥", "value": "85%",   "label": "User Engagement" }
+        ]
+      },
+      {
+        "id": "cs_slug",
+        "name": "slug",
+        "label": "Case Study Slug (for URL: /case-studies/[slug])",
+        "type": "text",
+        "default": "techcorp-industries"
+      },
+      {
+        "id": "cs_read_more_label",
+        "name": "read_more_label",
+        "label": "Read More Label",
+        "type": "text",
+        "default": "Read Full Case Study"
+      },
+      {
+        "id": "cs_image",
+        "name": "image",
+        "label": "Right Column Image",
+        "type": "image",
+        "default": {
+          "src": "",
+          "alt": "Project screenshot",
+          "width": 720,
+          "height": 500
+        }
+      }
+    ],
+    "default": [
+      {
+        "category": "HubSpot Migration",
+        "company_name": "TechCorp Industries",
+        "outcome_headline": "Increased Lead Generation by 340%",
+        "slug": "techcorp-industries",
+        "read_more_label": "Read Full Case Study",
+        "metrics": [
+          { "icon": "📈", "value": "340%", "label": "Increase in Leads" },
+          { "icon": "💰", "value": "2.5x",  "label": "Revenue Growth" },
+          { "icon": "👥", "value": "85%",   "label": "User Engagement" }
+        ]
+      },
+      {
+        "category": "Enterprise Solutions",
+        "company_name": "Global Finance Solutions",
+        "outcome_headline": "Streamlined Multi-Brand Platform",
+        "slug": "global-finance-solutions",
+        "read_more_label": "Read Full Case Study",
+        "metrics": [
+          { "icon": "🤝", "value": "60%",   "label": "Faster Deployment" },
+          { "icon": "💰", "value": "$250K", "label": "Annual Savings" },
+          { "icon": "⭐", "value": "95%",   "label": "Client Satisfaction" }
+        ]
+      }
+    ]
+  }
+]

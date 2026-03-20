@@ -1,0 +1,132 @@
+[
+  {
+    "id": "fw_eyebrow",
+    "name": "eyebrow",
+    "label": "Eyebrow Label",
+    "type": "text",
+    "default": "Portfolio"
+  },
+  {
+    "id": "fw_heading",
+    "name": "heading",
+    "label": "Section Heading",
+    "type": "text",
+    "default": "Featured Work"
+  },
+  {
+    "id": "fw_subheading",
+    "name": "subheading",
+    "label": "Section Subheading",
+    "type": "richtext",
+    "default": "<p>A selection of HubSpot projects showcasing expertise in theme development, custom integrations, and scalable CMS solutions.</p>"
+  },
+  {
+    "id": "fw_cta_label",
+    "name": "cta_label",
+    "label": "Section CTA Label",
+    "type": "text",
+    "default": "View All Projects"
+  },
+  {
+    "id": "fw_cta_url",
+    "name": "cta_url",
+    "label": "Section CTA URL",
+    "type": "link",
+    "default": {
+      "url": { "href": "/featured-work", "type": "EXTERNAL" },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "id": "fw_projects",
+    "name": "projects",
+    "label": "Project Cards",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "sorting_label_field": "projects.title",
+      "default": 4
+    },
+    "children": [
+      {
+        "id": "project_image",
+        "name": "image",
+        "label": "Project Image",
+        "type": "image",
+        "default": {
+          "src": "",
+          "alt": "Project screenshot",
+          "width": 720,
+          "height": 480
+        }
+      },
+      {
+        "id": "project_category",
+        "name": "category",
+        "label": "Project Category",
+        "type": "text",
+        "default": "HubSpot Theme"
+      },
+      {
+        "id": "project_title",
+        "name": "title",
+        "label": "Project Title",
+        "type": "text",
+        "default": "Enterprise CMS Theme"
+      },
+      {
+        "id": "project_description",
+        "name": "description",
+        "label": "Project Short Description",
+        "type": "text",
+        "default": "Built a fully customizable HubSpot theme for a Fortune 500 company with 50+ reusable modules, dynamic navigation, and advanced personalization features."
+      },
+      {
+        "id": "project_tags",
+        "name": "tags",
+        "label": "Project Tags (comma separated)",
+        "type": "text",
+        "default": "HubL, CSS, Custom Modules"
+      },
+      {
+        "id": "project_slug",
+        "name": "slug",
+        "label": "Project Slug (used for URL: /featured-work/[slug])",
+        "type": "text",
+        "default": "enterprise-cms-theme"
+      }
+    ],
+    "default": [
+      {
+        "category": "HubSpot Theme",
+        "title": "Enterprise CMS Theme",
+        "description": "Built a fully customizable HubSpot theme for a Fortune 500 company with 50+ reusable modules, dynamic navigation, and advanced personalization features.",
+        "tags": "HubL, CSS, Custom Modules",
+        "slug": "enterprise-cms-theme"
+      },
+      {
+        "category": "API Integration",
+        "title": "Marketing Automation Platform",
+        "description": "Developed custom HubSpot workflows and integrations with Salesforce, Zapier, and custom APIs to automate lead nurturing and scoring processes.",
+        "tags": "API, Workflows, Salesforce",
+        "slug": "marketing-automation-platform"
+      },
+      {
+        "category": "CMS Development",
+        "title": "SaaS Customer Portal",
+        "description": "Created a secure customer portal within HubSpot CMS with authentication, dynamic content, and real-time data syncing from external databases.",
+        "tags": "HubSpot API, JavaScript, Auth",
+        "slug": "saas-customer-portal"
+      },
+      {
+        "category": "Multi-Brand",
+        "title": "Multi-Brand Website System",
+        "description": "Architected a scalable multi-brand solution on HubSpot CMS allowing 12 brands to share components while maintaining unique identities and content.",
+        "tags": "Theme Dev, HubDB, Multi-lang",
+        "slug": "multi-brand-website-system"
+      }
+    ]
+  }
+]

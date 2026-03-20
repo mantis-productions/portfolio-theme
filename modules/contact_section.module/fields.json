@@ -1,0 +1,115 @@
+[
+  {
+    "id": "contact_heading",
+    "name": "heading",
+    "label": "Section Heading",
+    "type": "text",
+    "default": "Let's Work Together"
+  },
+  {
+    "id": "contact_intro",
+    "name": "intro",
+    "label": "Intro Paragraph",
+    "type": "richtext",
+    "default": "<p>Have a HubSpot project in mind? Whether you need a custom theme, complex integration, or strategic consultation, I'd love to hear from you.</p>"
+  },
+  {
+    "id": "contact_email",
+    "name": "email",
+    "label": "Email Address",
+    "type": "text",
+    "default": "mark@example.com"
+  },
+  {
+    "id": "contact_location",
+    "name": "location",
+    "label": "Location",
+    "type": "text",
+    "default": "Hudson Valley, New York"
+  },
+  {
+    "id": "contact_social_linkedin",
+    "name": "linkedin_url",
+    "label": "LinkedIn URL",
+    "type": "link",
+    "default": {
+      "url": { "href": "https://linkedin.com", "type": "EXTERNAL" },
+      "open_in_new_tab": true,
+      "no_follow": false
+    }
+  },
+  {
+    "id": "contact_social_github",
+    "name": "github_url",
+    "label": "GitHub URL",
+    "type": "link",
+    "default": {
+      "url": { "href": "https://github.com", "type": "EXTERNAL" },
+      "open_in_new_tab": true,
+      "no_follow": false
+    }
+  },
+  {
+    "id": "contact_help_heading",
+    "name": "help_heading",
+    "label": "'What I Can Help With' Heading",
+    "type": "text",
+    "default": "What I Can Help With"
+  },
+  {
+    "id": "contact_help_items",
+    "name": "help_items",
+    "label": "Help List Items",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 10,
+      "sorting_label_field": "help_items.item",
+      "default": 5
+    },
+    "children": [
+      {
+        "id": "help_item_text",
+        "name": "item",
+        "label": "Item",
+        "type": "text",
+        "default": "HubSpot Theme Development"
+      }
+    ],
+    "default": [
+      { "item": "HubSpot Theme Development" },
+      { "item": "HubSpot CMS Migration & Optimization" },
+      { "item": "Custom Module & Template Creation" },
+      { "item": "API Integrations & Automation" },
+      { "item": "Technical Consulting & Strategy" }
+    ]
+  },
+  {
+    "id": "contact_form_heading",
+    "name": "form_heading",
+    "label": "Form Card Heading",
+    "type": "text",
+    "default": "Send Me a Message"
+  },
+  {
+    "id": "contact_portal_id",
+    "name": "portal_id",
+    "label": "HubSpot Portal ID",
+    "type": "text",
+    "default": "YOUR_PORTAL_ID"
+  },
+  {
+    "id": "contact_form_id",
+    "name": "form_id",
+    "label": "HubSpot Form GUID",
+    "type": "text",
+    "default": "YOUR_FORM_GUID"
+  },
+  {
+    "id": "contact_form_submit_label",
+    "name": "submit_label",
+    "label": "Submit Button Label (passed to HubSpot form via CSS only)",
+    "type": "text",
+    "default": "Send Message"
+  }
+]

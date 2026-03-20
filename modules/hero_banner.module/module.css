@@ -1,0 +1,197 @@
+/* =============================================================================
+   Hero Banner Module Styles
+   ============================================================================= */
+
+.mp-hero {
+  background-color: var(--mp-color-white);
+  padding-top: var(--mp-space-16);
+  padding-bottom: var(--mp-space-16);
+  overflow: hidden;
+}
+
+/* ---------- Inner Layout: 55/45 split ---------- */
+.mp-hero__inner {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  align-items: center;
+  gap: var(--mp-space-12);
+  min-height: 560px;
+}
+
+/* ---------- Eyebrow ---------- */
+.mp-hero__eyebrow {
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: var(--mp-font-size-sm);
+  font-weight: var(--mp-font-weight-medium);
+  color: var(--mp-color-text-muted);
+  margin-bottom: var(--mp-space-4);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Heading ---------- */
+.mp-hero__heading {
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  font-weight: var(--mp-font-weight-black);
+  line-height: 1.05;
+  color: var(--mp-color-text-dark);
+  margin-bottom: var(--mp-space-6);
+  letter-spacing: -0.03em;
+}
+
+.mp-hero__heading-accent {
+  color: var(--mp-color-primary);
+}
+
+/* ---------- Body text ---------- */
+.mp-hero__body {
+  margin-bottom: var(--mp-space-8);
+  max-width: 500px;
+}
+
+.mp-hero__body p {
+  font-size: var(--mp-font-size-md);
+  color: var(--mp-color-text-muted);
+  line-height: var(--mp-line-height-loose);
+  margin: 0;
+}
+
+/* ---------- CTAs ---------- */
+.mp-hero__ctas {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--mp-space-4);
+  margin-bottom: var(--mp-space-10);
+}
+
+/* ---------- Stats Row ---------- */
+.mp-hero__stats {
+  display: flex;
+  align-items: center;
+  gap: var(--mp-space-6);
+  flex-wrap: wrap;
+  padding-top: var(--mp-space-8);
+  border-top: 1px solid var(--mp-color-border);
+}
+
+.mp-hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mp-space-1);
+}
+
+.mp-hero__stat-value {
+  font-size: var(--mp-font-size-2xl);
+  font-weight: var(--mp-font-weight-black);
+  color: var(--mp-color-text-dark);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.mp-hero__stat-label {
+  font-size: var(--mp-font-size-xs);
+  font-weight: var(--mp-font-weight-medium);
+  color: var(--mp-color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.mp-hero__stat-divider {
+  width: 1px;
+  height: 36px;
+  background-color: var(--mp-color-border);
+  flex-shrink: 0;
+}
+
+/* ---------- Image Column ---------- */
+.mp-hero__image-wrap {
+  position: relative;
+  border-radius: var(--mp-radius-xl);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background-color: var(--mp-color-dark-bg);
+}
+
+.mp-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Placeholder when no image is set */
+.mp-hero__image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0D1117 0%, #1A2235 100%);
+  color: rgba(255, 255, 255, 0.3);
+  font-size: var(--mp-font-size-sm);
+  font-weight: var(--mp-font-weight-medium);
+  border-radius: var(--mp-radius-xl);
+}
+
+/* ---------- Scroll animation ---------- */
+.mp-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.mp-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mp-hero__image-wrap.mp-animate {
+  transition-delay: 0.15s;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .mp-hero__inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: var(--mp-space-10);
+  }
+
+  .mp-hero__image-wrap {
+    order: -1;
+    max-height: 340px;
+  }
+
+  .mp-hero__heading {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .mp-hero {
+    padding-top: var(--mp-space-10);
+    padding-bottom: var(--mp-space-10);
+  }
+
+  .mp-hero__ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mp-hero__ctas .mp-btn {
+    justify-content: center;
+  }
+
+  .mp-hero__stats {
+    gap: var(--mp-space-4);
+  }
+
+  .mp-hero__stat-divider {
+    display: none;
+  }
+}

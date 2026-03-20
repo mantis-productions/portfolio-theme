@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ content.html_title }}</title>
+  <meta name="description" content="{{ content.meta_description }}">
+
+  {{ standard_header_includes }}
+
+  {# Google Fonts — Inter #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  {# Theme-level stylesheets #}
+  <link rel="stylesheet" href="{{ get_asset_url('../css/variables.css') }}">
+  <link rel="stylesheet" href="{{ get_asset_url('../css/main.css') }}">
+
+  {# HubSpot Forms embed library — loaded once globally #}
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+</head>
+
+<body class="{{ body_classes }}">
+
+  {% include "./header.html" %}
+
+  <main id="main-content" role="main">
+    {% block body %}{% endblock body %}
+  </main>
+
+  {% include "./footer.html" %}
+
+  {{ standard_footer_includes }}
+
+  {# Theme-level JavaScript #}
+  <script src="{{ get_asset_url('../js/main.js') }}" defer></script>
+
+</body>
+</html>

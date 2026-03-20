@@ -1,0 +1,15 @@
+{
+  "label": "Contact Section",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Dark background contact section. Left column has intro copy, contact details, social links, and a 'What I Can Help With' bullet list. Right column holds a white card with the embedded HubSpot form (portal ID and form ID are editable fields).",
+  "host_template_types": ["PAGE"],
+  "icon": "",
+  "is_available_for_new_content": true,
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": ["contact", "form", "cta"],
+  "no_wrapper": false
+}

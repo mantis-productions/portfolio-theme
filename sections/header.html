@@ -1,0 +1,242 @@
+{#
+  Mantis Portfolio — Header / Navigation Partial
+  - Logo (image or text fallback via theme settings)
+  - Anchor links: About, Work, Case Studies, Contact
+  - "Get in Touch" CTA pill button
+  - Sticky on scroll, mobile hamburger
+#}
+
+<header class="mp-nav" id="mp-site-header" role="banner">
+  <div class="mp-container">
+    <nav class="mp-nav__inner" aria-label="Main navigation">
+
+      {# Logo #}
+      <a href="/" class="mp-nav__logo" aria-label="Go to homepage">
+        {% if theme.brand.logo.src %}
+          <img
+            src="{{ theme.brand.logo.src }}"
+            alt="{{ theme.brand.logo.alt | default('Mark Wroblewski') }}"
+            width="{{ theme.brand.logo.width | default(180) }}"
+            height="{{ theme.brand.logo.height | default(40) }}"
+            loading="eager"
+          >
+        {% else %}
+          <span class="mp-nav__logo-text">{{ theme.brand.logo_text | default('Mark Wroblewski') }}</span>
+        {% endif %}
+      </a>
+
+      {# Mobile toggle #}
+      <button
+        class="mp-nav__toggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="mp-nav-menu"
+      >
+        <span class="mp-nav__toggle-bar"></span>
+        <span class="mp-nav__toggle-bar"></span>
+        <span class="mp-nav__toggle-bar"></span>
+      </button>
+
+      {# Navigation menu #}
+      <div class="mp-nav__menu" id="mp-nav-menu" role="menu">
+        <a href="#about"        class="mp-nav__link" role="menuitem">About</a>
+        <a href="#work"         class="mp-nav__link" role="menuitem">Work</a>
+        <a href="#case-studies" class="mp-nav__link" role="menuitem">Case Studies</a>
+        <a href="#contact"      class="mp-nav__link" role="menuitem">Contact</a>
+        <a href="#contact"      class="mp-btn mp-btn--primary mp-btn--sm mp-nav__cta" role="menuitem">
+          Get in Touch
+        </a>
+      </div>
+
+    </nav>
+  </div>
+</header>
+
+<style>
+/* =============================================================================
+   Navigation Styles (scoped to .mp-nav)
+   ============================================================================= */
+
+.mp-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--mp-z-nav);
+  background-color: var(--mp-color-white);
+  border-bottom: 1px solid transparent;
+  transition:
+    box-shadow var(--mp-transition-base),
+    border-color var(--mp-transition-base);
+}
+
+.mp-nav.is-scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  border-bottom-color: var(--mp-color-border);
+}
+
+.mp-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--mp-space-8);
+  height: 72px;
+}
+
+/* ---------- Logo ---------- */
+.mp-nav__logo {
+  flex-shrink: 0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.mp-nav__logo img {
+  display: block;
+  max-height: 40px;
+  width: auto;
+}
+
+.mp-nav__logo-text {
+  font-size: var(--mp-font-size-lg);
+  font-weight: var(--mp-font-weight-bold);
+  color: var(--mp-color-text-dark);
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Menu ---------- */
+.mp-nav__menu {
+  display: flex;
+  align-items: center;
+  gap: var(--mp-space-6);
+}
+
+.mp-nav__link {
+  font-size: var(--mp-font-size-sm);
+  font-weight: var(--mp-font-weight-medium);
+  color: var(--mp-color-text-dark);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color var(--mp-transition-fast);
+}
+
+.mp-nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--mp-color-primary);
+  border-radius: 2px;
+  transition: width var(--mp-transition-base);
+}
+
+.mp-nav__link:hover,
+.mp-nav__link.is-active {
+  color: var(--mp-color-primary);
+}
+
+.mp-nav__link.is-active::after,
+.mp-nav__link:hover::after {
+  width: 100%;
+}
+
+/* CTA button in nav */
+.mp-nav__cta {
+  margin-left: var(--mp-space-2);
+}
+
+/* ---------- Mobile Toggle ---------- */
+.mp-nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--mp-space-2);
+  border-radius: var(--mp-radius-sm);
+  transition: background-color var(--mp-transition-fast);
+}
+
+.mp-nav__toggle:hover {
+  background-color: var(--mp-color-light-bg);
+}
+
+.mp-nav__toggle-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--mp-color-text-dark);
+  border-radius: 2px;
+  transition: transform var(--mp-transition-base), opacity var(--mp-transition-fast);
+  transform-origin: center;
+}
+
+.mp-nav__toggle.is-open .mp-nav__toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mp-nav__toggle.is-open .mp-nav__toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mp-nav__toggle.is-open .mp-nav__toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- Body offset for fixed nav ---------- */
+body {
+  padding-top: 72px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .mp-nav__toggle {
+    display: flex;
+  }
+
+  .mp-nav__menu {
+    display: none;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--mp-color-white);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: var(--mp-space-6) var(--mp-space-6);
+    border-top: 1px solid var(--mp-color-border);
+    overflow-y: auto;
+    z-index: var(--mp-z-nav);
+  }
+
+  .mp-nav__menu.is-open {
+    display: flex;
+  }
+
+  .mp-nav__link {
+    font-size: var(--mp-font-size-md);
+    padding: var(--mp-space-4) 0;
+    width: 100%;
+    border-bottom: 1px solid var(--mp-color-border);
+  }
+
+  .mp-nav__link::after {
+    display: none;
+  }
+
+  .mp-nav__cta {
+    margin: var(--mp-space-6) 0 0 0;
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>

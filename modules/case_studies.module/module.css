@@ -1,0 +1,269 @@
+/* =============================================================================
+   Case Studies Module Styles
+   ============================================================================= */
+
+.mp-cs {
+  background-color: var(--mp-color-white);
+  padding-top: var(--mp-space-24);
+  padding-bottom: var(--mp-space-24);
+}
+
+/* ---------- Section Header ---------- */
+.mp-cs__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--mp-space-8);
+  margin-bottom: var(--mp-space-14);
+  flex-wrap: wrap;
+}
+
+.mp-cs__header-text {
+  max-width: 560px;
+}
+
+.mp-cs__header .mp-section-heading {
+  margin-bottom: var(--mp-space-3);
+}
+
+.mp-cs__header-cta {
+  flex-shrink: 0;
+}
+
+/* ---------- Case Study List ---------- */
+.mp-cs__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mp-space-12);
+}
+
+/* ---------- Entry: Split Layout ---------- */
+.mp-cs__entry {
+  display: grid;
+  grid-template-columns: 58% 42%;
+  align-items: center;
+  gap: var(--mp-space-12);
+  background-color: var(--mp-color-light-bg);
+  border: 1px solid var(--mp-color-border);
+  border-radius: var(--mp-radius-xl);
+  padding: var(--mp-space-10);
+  transition: box-shadow var(--mp-transition-base);
+}
+
+.mp-cs__entry:hover {
+  box-shadow: var(--mp-shadow-lg);
+}
+
+/* Alternate image to left on even entries */
+.mp-cs__entry--reversed {
+  direction: rtl;
+}
+
+.mp-cs__entry--reversed > * {
+  direction: ltr;
+}
+
+/* ---------- Content Column ---------- */
+.mp-cs__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mp-space-4);
+}
+
+.mp-cs__category {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--mp-font-size-xs);
+  font-weight: var(--mp-font-weight-semibold);
+  color: var(--mp-color-text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background-color: var(--mp-color-border);
+  padding: 3px 10px;
+  border-radius: var(--mp-radius-pill);
+  align-self: flex-start;
+}
+
+.mp-cs__company {
+  font-size: var(--mp-font-size-xl);
+  font-weight: var(--mp-font-weight-bold);
+  color: var(--mp-color-text-dark);
+  line-height: var(--mp-line-height-snug);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.mp-cs__outcome {
+  font-size: var(--mp-font-size-base);
+  font-weight: var(--mp-font-weight-semibold);
+  color: var(--mp-color-primary);
+  margin: 0;
+  line-height: var(--mp-line-height-snug);
+}
+
+/* Challenge / Solution blocks */
+.mp-cs__details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mp-space-3);
+  padding: var(--mp-space-4) 0;
+  border-top: 1px solid var(--mp-color-border);
+  border-bottom: 1px solid var(--mp-color-border);
+}
+
+.mp-cs__detail-block {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: var(--mp-space-3);
+  align-items: baseline;
+}
+
+.mp-cs__detail-label {
+  font-size: var(--mp-font-size-xs);
+  font-weight: var(--mp-font-weight-bold);
+  color: var(--mp-color-text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.mp-cs__detail-text p {
+  font-size: var(--mp-font-size-sm);
+  color: var(--mp-color-text-body);
+  line-height: var(--mp-line-height-loose);
+  margin: 0;
+}
+
+/* ---------- Metrics Row ---------- */
+.mp-cs__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--mp-space-5);
+}
+
+.mp-cs__metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mp-cs__metric-icon {
+  font-size: var(--mp-font-size-base);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.mp-cs__metric-value {
+  font-size: var(--mp-font-size-xl);
+  font-weight: var(--mp-font-weight-black);
+  color: var(--mp-color-text-dark);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.mp-cs__metric-label {
+  font-size: var(--mp-font-size-xs);
+  font-weight: var(--mp-font-weight-medium);
+  color: var(--mp-color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* ---------- Read More Link ---------- */
+.mp-cs__read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mp-space-2);
+  font-size: var(--mp-font-size-sm);
+  font-weight: var(--mp-font-weight-semibold);
+  color: var(--mp-color-primary);
+  text-decoration: none;
+  margin-top: var(--mp-space-2);
+  transition:
+    gap var(--mp-transition-fast),
+    color var(--mp-transition-fast);
+}
+
+.mp-cs__read-more:hover {
+  color: var(--mp-color-primary-dark);
+  gap: var(--mp-space-3);
+}
+
+/* ---------- Image Column ---------- */
+.mp-cs__image-col {
+  border-radius: var(--mp-radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background-color: var(--mp-color-light-bg-2);
+}
+
+.mp-cs__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.mp-cs__entry:hover .mp-cs__image {
+  transform: scale(1.03);
+}
+
+.mp-cs__image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mp-color-border);
+}
+
+/* ---------- Scroll Animations ---------- */
+.mp-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.mp-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .mp-cs__entry,
+  .mp-cs__entry--reversed {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    padding: var(--mp-space-8) var(--mp-space-6);
+    gap: var(--mp-space-8);
+  }
+
+  .mp-cs__entry--reversed > * {
+    direction: ltr;
+  }
+
+  .mp-cs__image-col {
+    order: -1;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 600px) {
+  .mp-cs__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mp-cs__detail-block {
+    grid-template-columns: 1fr;
+    gap: var(--mp-space-1);
+  }
+
+  .mp-cs__metrics {
+    gap: var(--mp-space-4);
+  }
+}

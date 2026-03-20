@@ -1,0 +1,127 @@
+[
+  {
+    "id": "hero_eyebrow",
+    "name": "eyebrow",
+    "label": "Eyebrow Tag",
+    "type": "text",
+    "default": "/> HubSpot Developer"
+  },
+  {
+    "id": "hero_heading_line1",
+    "name": "heading_line1",
+    "label": "Heading Line 1",
+    "type": "text",
+    "default": "Hi, I'm Mark"
+  },
+  {
+    "id": "hero_heading_accent",
+    "name": "heading_accent",
+    "label": "Heading Line 2 (Orange Accent)",
+    "type": "text",
+    "default": "Wroblewski"
+  },
+  {
+    "id": "hero_body",
+    "name": "body_text",
+    "label": "Body Text",
+    "type": "richtext",
+    "default": "<p>A HubSpot developer with 7 years of experience building powerful CMS themes, custom modules, and scalable integrations that drive business growth.</p>"
+  },
+  {
+    "id": "hero_cta_primary_group",
+    "name": "cta_primary",
+    "label": "Primary CTA",
+    "type": "group",
+    "children": [
+      {
+        "id": "hero_cta_primary_label",
+        "name": "hero_cta_primary_label",
+        "label": "Button Label",
+        "type": "text",
+        "default": "Let's Work Together"
+      },
+      {
+        "id": "hero_cta_primary_url",
+        "name": "url",
+        "label": "Button URL",
+        "type": "link",
+        "default": {
+          "url": { "href": "#contact", "type": "EXTERNAL" },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "hero_cta_secondary_group",
+    "name": "cta_secondary",
+    "label": "Secondary CTA",
+    "type": "group",
+    "children": [
+      {
+        "id": "hero_cta_secondary_label",
+        "name": "hero_cta_secondary_label",
+        "label": "Button Label",
+        "type": "text",
+        "default": "View My Work"
+      },
+      {
+        "id": "hero_cta_secondary_url",
+        "name": "url",
+        "label": "Button URL",
+        "type": "link",
+        "default": {
+          "url": { "href": "#work", "type": "EXTERNAL" },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "hero_stats",
+    "name": "stats",
+    "label": "Stats",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "sorting_label_field": "stats.value",
+      "default": 3
+    },
+    "children": [
+      {
+        "id": "stat_value",
+        "name": "value",
+        "label": "Stat Value",
+        "type": "text",
+        "default": "7+"
+      },
+      {
+        "id": "stat_label",
+        "name": "stat_label",
+        "label": "Stat Label",
+        "type": "text",
+        "default": "Years Experience"
+      }
+    ],
+    "default": [
+      { "value": "7+",  "label": "Years Experience" },
+      { "value": "50+", "label": "Projects Delivered" },
+      { "value": "30+", "label": "Happy Clients" }
+    ]
+  },
+  {
+    "id": "hero_image",
+    "name": "hero_image",
+    "label": "Hero Image",
+    "type": "image",
+    "default": {
+      "src": "",
+      "alt": "Mark Wroblewski at work",
+      "width": 720,
+      "height": 580
+    }
+  }
+]

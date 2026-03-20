@@ -1,0 +1,112 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Home
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+{# ============================================================
+   Mantis Portfolio — Home Page Template
+   Drag-and-drop area with all 5 portfolio sections pre-placed.
+   Editors can rearrange, duplicate, or add new sections in
+   the HubSpot page editor.
+   ============================================================ #}
+
+{% block body %}
+
+{% dnd_area "main_content" label="Main Content" %}
+
+  {# ── 1. HERO BANNER ───────────────────────────────────────── #}
+  {% dnd_section
+    background_color={ "color": "#FFFFFF", "opacity": 100 }
+    padding_top="0"
+    padding_bottom="0"
+    full_width=true
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="./modules/hero_banner.module"
+          label="Hero Banner"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ── 2. ABOUT SECTION ─────────────────────────────────────── #}
+  {% dnd_section
+    background_color={ "color": "#F8F9FA", "opacity": 100 }
+    padding_top="0"
+    padding_bottom="0"
+    full_width=true
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="./modules/about_section.module"
+          label="About Section"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ── 3. FEATURED WORK ─────────────────────────────────────── #}
+  {% dnd_section
+    background_color={ "color": "#0D1117", "opacity": 100 }
+    padding_top="0"
+    padding_bottom="0"
+    full_width=true
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="./modules/featured_work.module"
+          label="Featured Work"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ── 4. CASE STUDIES ──────────────────────────────────────── #}
+  {% dnd_section
+    background_color={ "color": "#FFFFFF", "opacity": 100 }
+    padding_top="0"
+    padding_bottom="0"
+    full_width=true
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="./modules/case_studies.module"
+          label="Case Studies"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {# ── 5. CONTACT SECTION ───────────────────────────────────── #}
+  {% dnd_section
+    background_color={ "color": "#0D1117", "opacity": 100 }
+    padding_top="0"
+    padding_bottom="0"
+    full_width=true
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module
+          path="./modules/contact_section.module"
+          label="Contact Section"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+{% end_dnd_area %}
+
+{% endblock body %}

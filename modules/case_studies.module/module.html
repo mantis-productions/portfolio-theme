@@ -1,0 +1,137 @@
+{#
+  Case Studies Module
+  - Section anchor: #case-studies
+  - Light background
+  - Section header with View All CTA
+  - Each study: 60/40 split — left content | right image
+  - Category, company, orange outcome headline
+  - Challenge / Solution labels
+  - Metrics row with icon, value, label
+  - "Read Full Case Study" → /case-studies/[slug]
+  - Alternating layout (left/right image) for visual variety
+#}
+
+<section class="mp-cs" id="case-studies" aria-label="Case Studies">
+  <div class="mp-container">
+
+    {# ── Section Header ── #}
+    <div class="mp-cs__header mp-animate">
+      <div class="mp-cs__header-text">
+        {% if module.eyebrow %}
+          <span class="mp-section-eyebrow">{{ module.eyebrow }}</span>
+        {% endif %}
+        {% if module.heading %}
+          <h2 class="mp-section-heading">{{ module.heading }}</h2>
+        {% endif %}
+        {% if module.subheading %}
+          <p class="mp-section-subtitle">{{ module.subheading }}</p>
+        {% endif %}
+      </div>
+      {% if module.view_all_label %}
+        <a
+          href="{{ module.view_all_url.url.href | default('/case-studies') }}"
+          class="mp-btn mp-btn--primary mp-btn--sm mp-cs__header-cta"
+          {% if module.view_all_url.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}
+        >
+          {{ module.view_all_label }}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+
+    {# ── Case Study Entries ── #}
+    {% if module.studies %}
+      <div class="mp-cs__list">
+        {% for study in module.studies %}
+          <article
+            class="mp-cs__entry mp-animate {% if loop.index is even %}mp-cs__entry--reversed{% endif %}"
+            aria-label="{{ study.company_name }} case study"
+          >
+
+            {# ── Left: Content ── #}
+            <div class="mp-cs__content">
+
+              {% if study.category %}
+                <span class="mp-cs__category">{{ study.category }}</span>
+              {% endif %}
+
+              {% if study.company_name %}
+                <h3 class="mp-cs__company">{{ study.company_name }}</h3>
+              {% endif %}
+
+              {% if study.outcome_headline %}
+                <p class="mp-cs__outcome">{{ study.outcome_headline }}</p>
+              {% endif %}
+
+              <div class="mp-cs__details">
+                {% if study.challenge %}
+                  <div class="mp-cs__detail-block">
+                    <span class="mp-cs__detail-label">Challenge</span>
+                    <div class="mp-cs__detail-text">{{ study.challenge }}</div>
+                  </div>
+                {% endif %}
+                {% if study.solution %}
+                  <div class="mp-cs__detail-block">
+                    <span class="mp-cs__detail-label">Solution</span>
+                    <div class="mp-cs__detail-text">{{ study.solution }}</div>
+                  </div>
+                {% endif %}
+              </div>
+
+              {# Metrics #}
+              {% if study.metrics %}
+                <div class="mp-cs__metrics" aria-label="Results">
+                  {% for metric in study.metrics %}
+                    <div class="mp-cs__metric">
+                      <span class="mp-cs__metric-icon" aria-hidden="true">{{ metric.icon }}</span>
+                      <span class="mp-cs__metric-value">{{ metric.value }}</span>
+                      <span class="mp-cs__metric-label">{{ metric.metric_label }}</span>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              {% if study.read_more_label %}
+                <a
+                  href="/case-studies/{{ study.slug }}"
+                  class="mp-cs__read-more"
+                  aria-label="Read {{ study.company_name }} full case study"
+                >
+                  {{ study.read_more_label }}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              {% endif %}
+
+            </div>
+
+            {# ── Right: Image ── #}
+            <div class="mp-cs__image-col">
+              {% if study.image.src %}
+                <img
+                  src="{{ study.image.src }}"
+                  alt="{{ study.image.alt | default(study.company_name) }}"
+                  class="mp-cs__image"
+                  width="{{ study.image.width }}"
+                  height="{{ study.image.height }}"
+                  loading="lazy"
+                >
+              {% else %}
+                <div class="mp-cs__image-placeholder" aria-hidden="true">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+                  </svg>
+                </div>
+              {% endif %}
+            </div>
+
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</section>
